@@ -68,6 +68,28 @@ https://www.figma.com/design/TonITiIaTrFijci4beR1lI/ai-web-design?node-id=2-2&t=
 
 ---
 
+# Figma File Structure
+
+The Figma file is organized into pages. When generating from Figma, only treat
+the live pages as sources of truth.
+
+**Live sources — generate from these:**
+
+- **Foundations** — design tokens made visible (color ramps, semantic colors, type scale, spacing, radii). Documents the Variables that power the file.
+- **Components** — the reusable component library (buttons, inputs, cards, nav), each with variants. These map to React components; prefer composing from these.
+- **Screens / Pages** — full page layouts composed from library components. The source for generating complete pages.
+
+**Not sources of truth — do not generate from these unless I explicitly point you at a specific frame:**
+
+- **WIP** — work-in-progress exploration, not final.
+- **REVIEW** — designs awaiting feedback/sign-off, not yet approved.
+- **ARCHIVE** — deprecated or superseded designs, kept for reference only.
+
+Always favor my explicit selection over assuming which page to read. When I share
+a selection or link, that's the authoritative target regardless of page.
+
+---
+
 # Working Principles
 
 Claude Code should follow these principles throughout the project:
