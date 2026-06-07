@@ -48,15 +48,23 @@ This is the defined stack — follow these conventions and do not introduce alte
 # The Two-Directional Workflow
 
 ### Top-down (concept → Figma → code) — the primary, mature path
+
 1. Explore and build layouts/components in Figma, backed by the design-system file.
 2. Select a frame/component in the Figma desktop app (the MCP server is selection-based), or paste a Figma link into the prompt.
 3. Generate the implementation **against this repo's existing conventions** — match the framework, the Tailwind utility approach, and existing component primitives. Do not produce generic markup that ignores the codebase.
 4. Review the diff, run locally, iterate, commit.
 
 ### Bottom-up (code → Figma) — the weaker leg, use with calibrated expectations
+
 - Treat **design tokens / the design system as the shared contract** between code and Figma, rather than relying on perfect round-tripping of arbitrary components back into editable Figma layers.
 - The MCP server's canvas-write tools can push some changes back to Figma, but reconcile deliberately — keep tokens as the synchronization layer.
 - Where Tailwind utilities map to Figma Variables, keep them aligned so both sides stay in sync at the token level.
+
+---
+
+# Primary Figma file:
+
+https://www.figma.com/design/TonITiIaTrFijci4beR1lI/ai-web-design?node-id=2-2&t=cmWvZwLxpZBNbVIG-0
 
 ---
 
@@ -138,6 +146,7 @@ When working with code, prioritize:
 - Minimal and purposeful dependencies
 
 Specific to this project:
+
 - Keep components typed; lean on TypeScript types as contracts when generating code.
 - Use Tailwind utility classes. Map design values to Tailwind theme tokens (defined in CSS via \`@theme\`) rather than hardcoding one-off values, so the design system stays coherent.
 - Prefer composing from existing primitives over re-inventing; check \`src/\` for what already exists before creating new patterns.
