@@ -1,5 +1,7 @@
 # Project Context
 
+## Test Line
+
 This is an AI-supported web design project that integrates AI from design iteration through to a finished website prototype. I use it to plan, design, structure, and build digital experiences with support from Claude Code.
 
 The workflow is built around three tools working together:
