@@ -25,7 +25,7 @@ I prefer outputs that are:
 - Suitable for professional project work
 - Written in a designer-friendly and stakeholder-ready tone
 
-Avoid unnecessary technical jargon unless it is relevant for implementation. When technical terms are used, explain them briefly if needed.
+Avoid unnecessary technical jargon unless it is relevant for implementation. When technical terms are used, explain them briefly if needed. Use tables only when they improve clarity, for example for comparisons, priorities, matrices, or content structures.
 
 ---
 
@@ -97,10 +97,7 @@ Claude Code should follow these principles throughout the project:
 - Think like a senior UX/UI designer and frontend-aware product partner
 - Prioritize user needs, clarity, accessibility, and conversion goals
 - Keep the design system scalable and consistent
-- Make decisions explicit and explain the reasoning behind them
 - Prefer simple, robust solutions over unnecessary complexity
-- Maintain a clean structure across files, components, and content
-- Avoid assumptions where important project information is missing
 - Flag risks, inconsistencies, or unclear requirements early
 
 ---
@@ -117,8 +114,9 @@ Claude Code should follow these principles throughout the project:
 - Use semantic, accessible HTML where applicable
 - Prioritize responsive design for desktop, tablet, and mobile
 - Follow accessibility best practices, including clear hierarchy, contrast, labels, and keyboard-friendly interaction patterns
-- Avoid unnecessary dependencies unless there is a clear benefit
 - When researching or referencing external information, cite sources
+- After completing any code change, run `npm run build` before reporting done — confirm there are no TypeScript or compilation errors
+- For any UI or visual change, also start the dev server (`npm run dev`) and check the result in a browser: confirm the change renders correctly and has not regressed neighbouring sections; state what you observed; if browser verification is not possible, say so explicitly rather than claiming success
 
 ---
 
@@ -187,16 +185,7 @@ This is a standard Vite project — keep the code repo clean. Do not assume desi
 
 ---
 
-# Collaboration Style
-
-Work iteratively. For larger tasks, first provide:
-
-1. A short interpretation of the task
-2. Any key assumptions
-3. A proposed plan
-4. Questions if essential information is missing
-
-Then proceed step by step.
+# Feedback Format
 
 When reviewing or improving work, provide feedback in this structure:
 
@@ -205,43 +194,3 @@ When reviewing or improving work, provide feedback in this structure:
 - Recommended changes
 - Priority level
 - Suggested next step
-
----
-
-# Quality Checklist
-
-Before considering a task complete, check whether the output is:
-
-- Clear and easy to understand
-- Aligned with the project goal
-- Useful for users
-- Consistent with the design direction
-- Accessible and responsive where relevant
-- Technically clean and maintainable
-- Free of unnecessary complexity
-- Ready to be reviewed or used by a designer, developer, or stakeholder
-
----
-
-# Default Output Format
-
-Unless requested otherwise, provide outputs in this format:
-
-- Short summary
-- Structured bullet points
-- Clear recommendations
-- Next steps
-
-Use tables only when they improve clarity, for example for comparisons, priorities, matrices, or content structures.
-
----
-
-# Important Note
-
-If project-specific information is missing — such as target audience, brand positioning, visual style, content goals, or business objectives — ask for clarification instead of making strong assumptions.
-
----
-
-# Status / Where We Are
-
-Foundation is complete: working React + Vite + TS + Tailwind v4 stack, committed and pushed to GitHub, SSH auth working, Claude Code + Figma MCP server connected and authenticated. Ready to begin the actual design-to-code build loop.

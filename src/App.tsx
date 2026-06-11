@@ -1,23 +1,56 @@
-import "./index.css";
+import { useState } from 'react'
+import './index.css'
+import AnnouncementBar from './components/AnnouncementBar'
+import Header from './components/Header'
+import HeroBanner from './components/HeroBanner'
+import CategoryGrid from './components/CategoryGrid'
+import FeaturedProducts from './components/FeaturedProducts'
+import PromoBanner from './components/PromoBanner'
+import ValueProps from './components/ValueProps'
+import CollectionHighlight from './components/CollectionHighlight'
+import Testimonials from './components/Testimonials'
+import BrandStory from './components/BrandStory'
+import Newsletter from './components/Newsletter'
+import InstagramFeed from './components/InstagramFeed'
+import Footer from './components/Footer'
 
 function App() {
+  const [announcementVisible, setAnnouncementVisible] = useState(true)
+
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 py-24">
-      <section className="max-w-2xl space-y-6 text-center">
-        <h1>Welcome to My Site</h1>
-        <p className="text-lg text-fg leading-relaxed">
-          A clean starting point for building meaningful digital experiences —
-          designed with intention and built with care.
-        </p>
-        <button
-          type="button"
-          className="mt-4 inline-flex items-center rounded-lg bg-accent px-6 py-3 text-base font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-        >
-          Get Started
-        </button>
-      </section>
-    </main>
-  );
+    <>
+      {/* Fixed overlay: announcement bar + header float over the hero image */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+        {announcementVisible && (
+          <AnnouncementBar
+            message="This is an announcement with a"
+            linkText="Link →"
+            linkHref="#"
+            onDismiss={() => setAnnouncementVisible(false)}
+          />
+        )}
+        <Header />
+      </div>
+
+      <HeroBanner
+        heading="Heading"
+        subheading="Subheading"
+        imageSrc="/hero.png"
+        ctaHref="#"
+      />
+
+      <CategoryGrid />
+      <FeaturedProducts />
+      <PromoBanner />
+      <ValueProps />
+      <CollectionHighlight />
+      <Testimonials />
+      <BrandStory />
+      <Newsletter />
+      <InstagramFeed />
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
